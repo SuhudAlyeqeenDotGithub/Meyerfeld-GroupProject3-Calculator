@@ -1,0 +1,2 @@
+createCalculatorPad();
+updateDisplay();
