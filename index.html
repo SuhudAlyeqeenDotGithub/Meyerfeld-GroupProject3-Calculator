@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="./components/NumButton.js"></script>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <section class="calculator__frame">
+            <div class="calculator__content">
+                <div class="calculator__display-frame">
+                    <div class="calculator__display-content">
+
+                    </div>
+                </div>
+                <div class="calculator__num-pad-frame">
+                    <div class="calculator__top-pad-frame">
+                        <div class="calculator__top-pad-content">
+
+                        </div>
+                    </div>
+                    <div class="calculator__bottom-pad-frame">
+                        <div class="calculator__bottom-pad-left-frame">
+                            <div class="calculator__bottom-pad-left-content">
+
+                            </div>
+                        </div>
+                        <div class="calculator__bottom-pad-right-frame">
+                            <div class="calculator__bottom-pad-right-content">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer></footer>
+    <script>
+        
+        const topPad = document.querySelector(".calculator__top-pad-content")
+        const leftPad = document.querySelector(".calculator__bottom-pad-left-content")
+        const rightPad = document.querySelector(".calculator__bottom-pad-right-content")
+
+        topPad.innerHTML = `
+                            ${NumButton("C")}
+                            ${NumButton("del")}
+                            ${NumButton("÷")}
+                            
+                        `
+        leftPad.innerHTML = `
+                            <div class="num-pad__row">
+                                ${NumButton("1")}
+                                ${NumButton("2")}
+                                ${NumButton("3")}
+                            </div>
+                            <div class="num-pad__row">
+                                ${NumButton("4")}
+                                ${NumButton("5")}
+                                ${NumButton("6")}
+                            </div>
+                            <div class="num-pad__row">
+                                ${NumButton("7")}
+                                ${NumButton("8")}
+                                ${NumButton("9")}
+                            </div>
+                            <div class="num-pad__row">
+                                ${NumButton(".")}
+                                ${NumButton("0")}
+                            </div>
+                            
+                        `
+        rightPad.innerHTML = `
+                            ${NumButton("*")}
+                            ${NumButton("+")}
+                            ${NumButton("-")}
+                            ${NumButton("=")}
+                        `
+
+    </script>
+</body>
+
+</html>
