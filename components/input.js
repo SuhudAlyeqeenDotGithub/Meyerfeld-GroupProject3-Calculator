@@ -1,33 +1,35 @@
 function inputNumber(number) {
+  if (hasError) {
+    clearCalculator();
+  }
 
-    if (waitingForSecondNumber) {
-        displayValue = number;
-        waitingForSecondNumber = false;
+  if (waitingForSecondNumber) {
+    displayValue = number;
+    waitingForSecondNumber = false;
+  } else if (displayValue === "0") {
+    displayValue = number;
+  } else {
+    displayValue += number;
+  }
 
-    } else if (displayValue === "0") {
-        displayValue = number;
-
-    } else {
-        displayValue += number;
-    }
-
-    updateDisplay();
+  updateDisplay();
 }
 
-
 function inputDecimal() {
+  if (hasError) {
+    clearCalculator();
+  }
 
-    if (displayValue.includes(".")) {
-        return;
-    }
+  if (displayValue.includes(".")) {
+    return;
+  }
 
-    if (waitingForSecondNumber) {
-        displayValue = "0.";
-        waitingForSecondNumber = false;
+  if (waitingForSecondNumber) {
+    displayValue = "0.";
+    waitingForSecondNumber = false;
+  } else {
+    displayValue += ".";
+  }
 
-    } else {
-        displayValue += ".";
-    }
-
-    updateDisplay();
+  updateDisplay();
 }
