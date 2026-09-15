@@ -21,7 +21,7 @@ function deleteNumber() {
   if (displayValue.length === 1) {
     displayValue = "0";
   } else {
-    displayValue = displayValue.slice(0, -1);
+    displayValue = displayValue.slice(0, displayValue.length - 1);
   }
 
   updateDisplay();
