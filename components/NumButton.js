@@ -1,7 +1,7 @@
 function NumButton(text) {
-    return `
+  return `
         <div class="num-pad__frame">
-            <div class="num-pad__content">
+            <div class="num-pad__content" data-value="${text}">
                 <span>
                     ${text}
                 </span>
