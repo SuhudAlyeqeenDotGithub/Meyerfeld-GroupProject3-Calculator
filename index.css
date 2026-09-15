@@ -80,6 +80,13 @@ main {
   background-color: var(--display-bg-color);
   border: 2px solid var(--display-border-color);
   border-radius: 4px;
+
+  /* handle text overflow */
+  overflow-x: auto;
+  white-space: nowrap;
+
+  /* ===== ADDED ===== */
+  padding-inline: 5px;
 }
 
 .calculator__num-pad-frame {
