@@ -23,3 +23,21 @@ buttons.forEach(function (button) {
     }
   });
 });
+
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+
+  if (!isNaN(key)) {
+    inputNumber(key);
+  } else if (key === ".") {
+    inputDecimal();
+  } else if (["+", "-", "*", "/"].includes(key)) {
+    inputOperator(key === "/" ? "÷" : key);
+  } else if (key === "Enter" || key === "=") {
+    calculate();
+  } else if (key === "Backspace") {
+    deleteNumber();
+  } else if (key === "Escape") {
+    clearCalculator();
+  }
+});
