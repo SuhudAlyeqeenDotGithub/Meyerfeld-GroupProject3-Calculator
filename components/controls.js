@@ -1,37 +1,28 @@
 function clearCalculator() {
+  displayValue = "0";
+  firstNumber = null;
+  operator = null;
+  waitingForSecondNumber = false;
+  hasError = false;
 
-    displayValue = "0";
-
-    firstNumber = null;
-
-    operator = null;
-
-    waitingForSecondNumber = false;
-
-    updateDisplay();
+  updateDisplay();
 }
 
-
 function deleteNumber() {
+  if (hasError) {
+    clearCalculator();
+    return;
+  }
 
-    if (
-        displayValue ===
-        "Cannot divide by zero 😏"
-    ) {
-        clearCalculator();
-        return;
-    }
+  if (waitingForSecondNumber) {
+    return;
+  }
 
+  if (displayValue.length === 1) {
+    displayValue = "0";
+  } else {
+    displayValue = displayValue.slice(0, -1);
+  }
 
-    if (displayValue.length === 1) {
-
-        displayValue = "0";
-
-    } else {
-
-        displayValue = displayValue.slice(0, -1);
-    }
-
-
-    updateDisplay();
+  updateDisplay();
 }
