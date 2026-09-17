@@ -8,6 +8,8 @@
   --display-border-color: #737373;
   --btn-bg-color-primary: #b5b5b5;
   --btn-bg-color-secondary: #c1c1c1;
+  --btn-bg-color-secondary-hover: #a5a5a5;
+  --btn-bg-color-secondary-active: #7c7c7c;
   --btn-border-color-primary: #4e4e4e;
   --btn-border-color-secondary: #9b9b9b;
 
@@ -159,7 +161,7 @@ main {
   gap: var(--num-pad-gap);
 }
 
-.num-pad__frame {
+.num-btn__frame {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,9 +172,20 @@ main {
   padding: 4px;
   background-color: var(--btn-bg-color-primary);
   border-radius: 4px;
+  user-select:none;
 }
 
-.num-pad__content {
+.num-btn__frame:hover {
+  background-color: var(--btn-bg-color-secondary-hover);
+  cursor: pointer;
+}
+
+.num-btn__frame:active {
+  background-color: var(--btn-bg-color-secondary-active);
+  cursor: pointer;
+}
+
+.num-btn__content {
   display: flex;
   justify-content: center;
   align-items: center;

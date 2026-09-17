@@ -2,7 +2,7 @@ createCalculatorPad();
 
 updateDisplay();
 
-const buttons = document.querySelectorAll(".num-pad__content");
+const buttons = document.querySelectorAll(".num-btn__content");
 
 buttons.forEach(function (button) {
   button.addEventListener("click", function () {
