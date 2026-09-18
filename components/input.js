@@ -5,11 +5,14 @@ function inputNumber(number) {
 
   if (waitingForSecondNumber) {
     displayValue = number;
+    displayExpression += " " + number;
     waitingForSecondNumber = false;
   } else if (displayValue === "0") {
     displayValue = number;
+    displayExpression = number;
   } else {
     displayValue += number;
+    displayExpression += number;
   }
 
   updateDisplay();
@@ -26,9 +29,11 @@ function inputDecimal() {
 
   if (waitingForSecondNumber) {
     displayValue = "0.";
+    displayExpression += " 0.";
     waitingForSecondNumber = false;
   } else {
     displayValue += ".";
+    displayExpression += ".";
   }
 
   updateDisplay();

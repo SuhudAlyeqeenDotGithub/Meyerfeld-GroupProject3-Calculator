@@ -9,6 +9,10 @@ function inputOperator(newOperator) {
     firstNumber = currentNumber;
     operator = newOperator;
     waitingForSecondNumber = true;
+
+    displayExpression = displayValue + " " + newOperator;
+    updateDisplay();
+
     return;
   }
 
@@ -25,11 +29,14 @@ function inputOperator(newOperator) {
 
     firstNumber = roundResult(result);
     displayValue = String(firstNumber);
-    updateDisplay();
   }
 
   operator = newOperator;
   waitingForSecondNumber = true;
+
+  displayExpression = displayValue + " " + newOperator;
+
+  updateDisplay();
 }
 
 function calculate() {
@@ -51,6 +58,8 @@ function calculate() {
   } else {
     displayValue = String(roundResult(result));
   }
+
+  displayExpression = displayValue;
 
   resetOperation();
   updateDisplay();

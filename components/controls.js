@@ -4,6 +4,7 @@ function clearCalculator() {
   operator = null;
   waitingForSecondNumber = false;
   hasError = false;
+  displayExpression = "";
 
   updateDisplay();
 }

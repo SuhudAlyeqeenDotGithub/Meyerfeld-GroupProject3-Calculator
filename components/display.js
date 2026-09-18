@@ -1,7 +1,7 @@
 const display = document.querySelector(".calculator__display-content");
 
 function updateDisplay() {
-  display.textContent = displayValue;
+  display.textContent = displayExpression || displayValue;
 }
 
 function roundResult(number) {
