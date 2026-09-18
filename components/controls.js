@@ -20,6 +20,7 @@ function deleteNumber() {
     displayExpression = String(firstNumber);
     displayValue = String(firstNumber);
 
+    firstNumber = null;
     operator = null;
     waitingForSecondNumber = false;
 
