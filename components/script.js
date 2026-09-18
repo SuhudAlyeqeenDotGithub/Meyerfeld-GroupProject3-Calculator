@@ -2,10 +2,10 @@ createCalculatorPad();
 
 updateDisplay();
 
-const buttons = document.querySelectorAll(".num-btn__content");
+const buttons = document.querySelectorAll(".num-btn__frame");
 
-buttons.forEach(function (button) {
-  button.addEventListener("click", function () {
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
     const value = button.dataset.value;
 
     if (!isNaN(value)) {
@@ -24,7 +24,7 @@ buttons.forEach(function (button) {
   });
 });
 
-document.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", (event) => {
   const key = event.key;
 
   if (!isNaN(key)) {
