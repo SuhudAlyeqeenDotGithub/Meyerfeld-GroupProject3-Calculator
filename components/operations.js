@@ -3,33 +3,43 @@ function inputOperator(newOperator) {
     return;
   }
 
-  const currentNumber = Number(displayValue);
-
+  // If there is no first number yet, store the current number
   if (firstNumber === null) {
-    firstNumber = currentNumber;
+    firstNumber = Number(displayValue);
     operator = newOperator;
     waitingForSecondNumber = true;
 
     displayExpression = displayValue + " " + newOperator;
-    updateDisplay();
 
+    updateDisplay();
     return;
   }
 
-  if (!waitingForSecondNumber) {
-    const result = operate(operator, firstNumber, currentNumber);
+  // If we are already waiting for a second number,
+  // just replace the operator.
+  if (waitingForSecondNumber) {
+    operator = newOperator;
 
-    if (typeof result === "string") {
-      displayValue = result;
-      hasError = true;
-      resetOperation();
-      updateDisplay();
-      return;
-    }
+    displayExpression = String(firstNumber) + " " + newOperator;
 
-    firstNumber = roundResult(result);
-    displayValue = String(firstNumber);
+    updateDisplay();
+    return;
   }
+
+  // We have both numbers, so calculate the previous operation
+  const secondNumber = Number(displayValue);
+  const result = operate(operator, firstNumber, secondNumber);
+
+  if (typeof result === "string") {
+    displayValue = result;
+    hasError = true;
+    resetOperation();
+    updateDisplay();
+    return;
+  }
+
+  firstNumber = roundResult(result);
+  displayValue = String(firstNumber);
 
   operator = newOperator;
   waitingForSecondNumber = true;

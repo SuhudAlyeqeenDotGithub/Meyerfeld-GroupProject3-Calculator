@@ -9,7 +9,7 @@ function inputNumber(number) {
     waitingForSecondNumber = false;
   } else if (displayValue === "0") {
     displayValue = number;
-    displayExpression = number;
+    displayExpression = number;9
   } else {
     displayValue += number;
     displayExpression += number;
